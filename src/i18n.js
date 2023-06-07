@@ -4,8 +4,8 @@ import { initReactI18next } from "react-i18next";
 import Backend from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import english from "../public/locales/en/translation.json";
-import french from "../public/locales/fr/translation.json";
+import english from "./locales/en/translation.json";
+import french from "./locales/fr/translation.json";
 
 const resources = {
   en: {
@@ -23,7 +23,7 @@ i18n
   .init({
     resources,
     lng: "en",
-    debug: true,
+    // debug: true,
 
     interpolation: {
       escapeValue: false
