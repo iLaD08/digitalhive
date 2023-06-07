@@ -1,0 +1,53 @@
+{
+  "layout": {
+    "first": "Home",
+    "second": "Features",
+    "third": "Testimony",
+    "fourth": "Contact"
+  },
+  "hero": {
+    "header1": "Improve your business",
+    "header2": "with DigitalHive",
+    "description": "We specialize in crafting tailored online solutions for businesses in Morocco. With our team of skilled professionals, , we provide comprehensive website design, development, and optimization services.",
+    "road2glory": "Your first step to glory!",
+    "button": "Get started"
+  },
+  "features": {
+    "title": "Our features",
+    "description": "Unlock Your Online Potential with Our Powerful Features",
+    "cards": [
+      {
+        "title": "Customized Design",
+        "description": "We create visually stunning websites tailored to your brand's unique identity."
+      },
+      {
+        "title": "Responsive Development",
+        "description": "Our websites are optimized for seamless performance across all devices and screen sizes."
+      },
+      {
+        "title": "E-commerce Solutions",
+        "description": "Expand your business with secure and user-friendly online stores."
+      },
+      {
+        "title": "Hosting",
+        "description": "Simplify your online presence with our hosting and domain registration services."
+      },
+      {
+        "title": "Transparent Pricing",
+        "description": "Our competitive pricing ensures excellent value for the services we offer."
+      }
+    ]
+  },
+  "testimony": {
+    "title1": "People love us",
+    "title2": "You're in good company",
+    "title3": "See why our clients choose us!"
+  },
+  "contact": {
+    "title": "Contact us",
+    "description": "Write what you want, and it will come true!",
+    "formlabels": ["Full name", "Email", "Message"],
+    "button": "Send",
+    "buttonLoading": "Sending"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "layout": {
+    "first": "Accueil",
+    "second": "Caractéristiques",
+    "third": "Témoignage",
+    "fourth": "Contact"
+  },
+  "hero": {
+    "header1": "Améliorez votre entreprise",
+    "header2": "avec DigitalHive",
+    "description": "Nous sommes spécialisés dans l'élaboration de solutions en ligne sur mesure pour les entreprises au Maroc. Avec notre équipe de professionnels qualifiés, nous fournissons des services complets de conception, de développement et d'optimisation de sites Web.",
+    "road2glory": "Votre premier pas vers la gloire!",
+    "button": "Commencer"
+  },
+  "features": {
+    "title": "Nos fonctionnalités",
+    "description": "Libérez votre potentiel en ligne avec nos puissantes fonctionnalités",
+    "cards": [
+      {
+        "title": "Conception personnalisée",
+        "description": "Nous créons des sites Web visuellement époustouflants adaptés à l'identité unique de votre marque."
+      },
+      {
+        "title": "Développement réactif",
+        "description": "Nos sites Web sont optimisés pour des performances fluides sur tous les appareils et toutes les tailles d'écran."
+      },
+      {
+        "title": "Solutions de e-commerce",
+        "description": "Développez votre activité avec des boutiques en ligne sécurisées et conviviales."
+      },
+      {
+        "title": "Hébergement",
+        "description": "Simplifiez votre présence en ligne avec nos services d'hébergement et d'enregistrement de domaine."
+      },
+      {
+        "title": "Tarification transparente",
+        "description": "Nos prix compétitifs garantissent une excellente valeur pour les services que nous offrons."
+      }
+    ]
+  },
+  "testimony": {
+    "title1": "Les gens nous aiment",
+    "title2": "Vous êtes en bonne compagnie",
+    "title3": "Découvrez pourquoi nos clients nous choisissent !"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Écrivez ce que vous voulez, et cela deviendra réalité !",
+    "formlabels": ["Nom et prénom", "E-mail", "Message"],
+    "button": "Envoyer",
+    "buttonLoading": "En cours..."
+  }
+}
