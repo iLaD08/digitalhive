@@ -1,5 +1,6 @@
 import { useState, useEffect, Suspense } from "react";
 import { useTranslation } from "react-i18next";
+import Icons from "./icons";
 import {
   Flex,
   Link,
@@ -7,9 +8,8 @@ import {
   Heading,
   Select,
   HStack,
-  useColorMode
+  useColorMode,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 export default function Layout() {
   const [langauge, setLanguage] = useState("en-US");
@@ -55,15 +55,11 @@ export default function Layout() {
             </Link>
           </HStack>
         </Flex>
-        <Flex p="0px 10px 0px 10px" justify="space-between">
-          <Select onChange={(e) => setLanguage(e.target.value)}>
-            <option value="en">En</option>
-            <option value="fr">Fr</option>
-          </Select>
-          <Button ml="10px" variant="ghost" onClick={toggleColorMode}>
-            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-          </Button>
-        </Flex>
+        <Icons
+          setLanguage={setLanguage}
+          toggleColorMode={toggleColorMode}
+          colorMode={colorMode}
+        />
       </Flex>
     </Suspense>
   );

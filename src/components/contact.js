@@ -18,13 +18,15 @@ import {
   Input,
   Textarea,
   Button,
-  useToast
+  useToast,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import sendMail from "../services/mailer";
 
 export default function Contact() {
   const [t] = useTranslation();
   const toast = useToast();
+  const [isMobile] = useMediaQuery("(max-width: 480px)");
   const [isLoading, setIsLoading] = useState(false);
 
   const ContactSchema = Yup.object().shape({
@@ -35,7 +37,7 @@ export default function Contact() {
     message: Yup.string()
       .required("Message is required!")
       .min(30, "Message is too short!")
-      .max(300, "You passed the limit!")
+      .max(300, "You passed the limit!"),
   });
 
   return (
@@ -50,7 +52,7 @@ export default function Contact() {
           </Text>
         </Stack>
         <Flex mt="5vh" justify="center" align="center">
-          <Card w="60vh">
+          <Card w={isMobile ? "40vh" : "60vh"}>
             <CardBody>
               <Formik
                 initialValues={{ fullname: "", email: "", message: "" }}
@@ -64,7 +66,7 @@ export default function Contact() {
                         title: "Message sent!",
                         status: "success",
                         duration: 5000,
-                        isClosable: true
+                        isClosable: true,
                       });
                     });
                   } catch (err) {
@@ -73,7 +75,7 @@ export default function Contact() {
                       title: "We are full right now!",
                       status: "error",
                       duration: 5000,
-                      isClosable: true
+                      isClosable: true,
                     });
                   }
                 }}

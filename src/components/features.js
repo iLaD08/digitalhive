@@ -8,7 +8,8 @@ import {
   Icon,
   Stack,
   Text,
-  useColorModeValue
+  useColorModeValue,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import ScrollAnimation from "react-animate-on-scroll";
 import {
@@ -16,7 +17,7 @@ import {
   FcPicture,
   FcShop,
   FcTabletAndroid,
-  FcDatabase
+  FcDatabase,
 } from "react-icons/fc";
 
 const Card = ({ heading, description, icon }) => {
@@ -57,9 +58,10 @@ const Card = ({ heading, description, icon }) => {
 
 export default function gridListWith() {
   const [t] = useTranslation();
+  const [isMobile] = useMediaQuery("(max-width: 480px)");
 
   return (
-    <Box id="features" p={7}>
+    <Box id="features" mt={isMobile && "35vh"} p={7}>
       <ScrollAnimation animateIn="fadeInDown">
         <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
           <Heading fontSize={{ base: "2xl", sm: "4xl" }} fontWeight={"bold"}>
