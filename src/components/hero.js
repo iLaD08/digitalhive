@@ -41,7 +41,7 @@ export default function CallToActionWithAnnotation() {
         >
           <Heading
             fontWeight={600}
-            fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+            fontSize={{ base: "3xl", sm: "4xl", md: "6xl" }}
             lineHeight={"110%"}
           >
             {t("hero.header1")} <br />
@@ -67,6 +67,7 @@ export default function CallToActionWithAnnotation() {
               bg={"green.400"}
               rounded={"full"}
               px={6}
+              size="lg"
               _hover={{
                 bg: "green.500",
               }}

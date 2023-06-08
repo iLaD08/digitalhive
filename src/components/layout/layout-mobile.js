@@ -6,6 +6,7 @@ import {
   Flex,
   Text,
   IconButton,
+  Heading,
   Button,
   Link,
   Icon,
@@ -19,21 +20,21 @@ import {
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 export default function LayoutMobile() {
-  const [langauge, setLanguage] = useState("en-US");
+  const [language, setLanguage] = useState(window.localStorage.getItem("i18nextLng"));
   const { isOpen, onToggle } = useDisclosure();
   const [t, i18n] = useTranslation();
   const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {
-    i18n.changeLanguage(langauge);
-  }, [langauge, i18n]);
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
 
   return (
     <Box>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
+        minH={"70px"}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
@@ -45,6 +46,7 @@ export default function LayoutMobile() {
           flex={{ base: 1, md: "auto" }}
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
+          align="center"
         >
           <IconButton
             onClick={onToggle}
@@ -54,21 +56,25 @@ export default function LayoutMobile() {
             variant={"ghost"}
             aria-label={"Toggle Navigation"}
           />
+          <Heading fontSize="2xl">
+            Digital<span style={{ color: "lightgreen" }}>Hive</span>{" "}
+          </Heading>
         </Flex>
         <Icons
+          language={language}
           setLanguage={setLanguage}
           toggleColorMode={toggleColorMode}
           colorMode={colorMode}
         />
       </Flex>
       <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
+        <MobileNav onToggle={onToggle} />
       </Collapse>
     </Box>
   );
 }
 
-const MobileNav = () => {
+const MobileNav = ({ onToggle }) => {
   const [t] = useTranslation();
 
   return (
@@ -77,19 +83,20 @@ const MobileNav = () => {
       p={4}
       display={{ md: "none" }}
     >
-      <MobileNavItem scrollTo="hero" label={t("layout.first")} />
-      <MobileNavItem scrollTo="features" label={t("layout.second")} />
-      <MobileNavItem scrollTo="testimony" label={t("layout.third")} />
-      <MobileNavItem scrollTo="contact" label={t("layout.fourth")} />
+      <MobileNavItem key={t("layout.first")} onToggle={onToggle} scrollTo="hero" label={t("layout.first")} />
+      <MobileNavItem key={t("layout.second")} onToggle={onToggle} scrollTo="features" label={t("layout.second")} />
+      <MobileNavItem key={t("layout.second")} onToggle={onToggle} scrollTo="testimony" label={t("layout.third")} />
+      <MobileNavItem key={t("layout.second")} onToggle={onToggle} scrollTo="contact" label={t("layout.fourth")} />
     </Stack>
   );
 };
 
-const MobileNavItem = ({ label, scrollTo, children }) => {
+const MobileNavItem = ({ onToggle, label, scrollTo }) => {
   const hanleNavigation = (element) => {
     const navTo = document.querySelector(`#${element}`);
 
     navTo.scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => onToggle(), 2000)
   };
 
   return (

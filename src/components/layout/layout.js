@@ -12,13 +12,13 @@ import {
 } from "@chakra-ui/react";
 
 export default function Layout() {
-  const [langauge, setLanguage] = useState("en-US");
+  const [language, setLanguage] = useState(window.localStorage.getItem("i18nextLng"));
   const [t, i18n] = useTranslation();
   const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {
-    i18n.changeLanguage(langauge);
-  }, [langauge, i18n]);
+    i18n.changeLanguage(language);
+  }, [language, i18n]);
 
   const hanleNavigation = (element) => {
     const navTo = document.querySelector(`#${element}`);
@@ -56,6 +56,7 @@ export default function Layout() {
           </HStack>
         </Flex>
         <Icons
+          language={language}
           setLanguage={setLanguage}
           toggleColorMode={toggleColorMode}
           colorMode={colorMode}
