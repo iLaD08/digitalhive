@@ -92,7 +92,7 @@ const MobileNav = ({ onToggle }) => {
 };
 
 const MobileNavItem = ({ onToggle, label, scrollTo }) => {
-  const hanleNavigation = (element) => {
+  const handleNavigation = (element) => {
     const navTo = document.querySelector(`#${element}`);
 
     navTo.scrollIntoView({ behavior: "smooth" });
@@ -100,7 +100,7 @@ const MobileNavItem = ({ onToggle, label, scrollTo }) => {
   };
 
   return (
-    <Stack spacing={4} onClick={() => hanleNavigation(scrollTo)}>
+    <Stack spacing={4} onClick={() => handleNavigation(scrollTo)}>
       <Flex
         py={2}
         as={Link}

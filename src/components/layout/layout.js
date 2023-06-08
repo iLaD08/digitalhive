@@ -20,7 +20,7 @@ export default function Layout() {
     i18n.changeLanguage(language);
   }, [language, i18n]);
 
-  const hanleNavigation = (element) => {
+  const handleNavigation = (element) => {
     const navTo = document.querySelector(`#${element}`);
 
     navTo.scrollIntoView({ behavior: "smooth" });
@@ -41,16 +41,16 @@ export default function Layout() {
         </Flex>
         <Flex>
           <HStack spacing="5vh">
-            <Link onClick={() => hanleNavigation("hero")}>
+            <Link onClick={() => handleNavigation("hero")}>
               {t("layout.first")}
             </Link>
-            <Link onClick={() => hanleNavigation("features")}>
+            <Link onClick={() => handleNavigation("features")}>
               {t("layout.second")}
             </Link>
-            <Link onClick={() => hanleNavigation("testimony")}>
+            <Link onClick={() => handleNavigation("testimony")}>
               {t("layout.third")}
             </Link>
-            <Link onClick={() => hanleNavigation("contact")}>
+            <Link onClick={() => handleNavigation("contact")}>
               {t("layout.fourth")}
             </Link>
           </HStack>
