@@ -72,10 +72,8 @@ export default function LargeWithLogoLeft() {
               </Link>
             </Stack>
             <Stack align={"flex-start"}>
-              <ListHeader>Follow Us</ListHeader>
-              <Link href={"#"}>Instagram</Link>
-              <Link href={"#"}>Twitter</Link>
-              <Link href={"#"}>Tiktok</Link>
+              <ListHeader>Email</ListHeader>
+              <Link href="mailto:digitalhive.inc@outlook.com">digitalhive.inc@outlook.com</Link>
             </Stack>
           </SimpleGrid>
         </Container>
